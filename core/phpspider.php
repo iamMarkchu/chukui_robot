@@ -328,14 +328,14 @@ class phpspider
         log::$log_type = isset($configs['log_type']) ? $configs['log_type'] : false;
 
         // 彩蛋
-        $included_files = get_included_files();
-        $content = file_get_contents($included_files[0]);
-        if (!preg_match("#/\* Do NOT delete this comment \*/#", $content) || !preg_match("#/\* 不要删除这段注释 \*/#", $content))
-        {
-            $msg = "Unknown error...";
-            log::error($msg);
-            exit;
-        }
+        //$included_files = get_included_files();
+        //$content = file_get_contents($included_files[0]);
+        //if (!preg_match("#/\* Do NOT delete this comment \*/#", $content) || !preg_match("#/\* 不要删除这段注释 \*/#", $content))
+        //{
+        //    $msg = "Unknown error...";
+        //    log::error($msg);
+        //    exit;
+        //}
 
         $configs['name']        = isset($configs['name'])        ? $configs['name']        : 'phpspider';
         $configs['proxy']       = isset($configs['proxy'])       ? $configs['proxy']       : '';
@@ -1782,6 +1782,9 @@ class phpspider
                 // field不为空而且存在子配置
                 if (!empty($values) && !empty($conf['children'])) 
                 {
+                    //如果父项是 string,则转为数组
+                    if(is_string($values))
+                        $values = [$values];
                     $child_values = array();
                     // 父项抽取到的html作为子项的提取内容
                     foreach ($values as $child_html) 
