@@ -61,7 +61,12 @@ $spider = new phpspider($configs);
 
 $spider->on_scan_page = function($page, $content, $phpspider)
 {
-    
+    $data = selector::select($content, "//div[contains(@class,'nav-links')]/a[last()-1]/text()");
+    $data = intval($data);
+    for ($i=2; $i <=$data ; $i++) { 
+        $tmp_url = $page['url']."/".$i;
+        $phpspider->add_url($tmp_url);   
+    }
 };
 $spider->on_content_page = function($page, $content, $phpspider)
 {
