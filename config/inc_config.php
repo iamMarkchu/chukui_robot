@@ -1,15 +1,15 @@
 <?php
 
 $GLOBALS['config']['db'] = array(
-    'host'  => '127.0.0.1',
+    'host'  => '192.168.31.249',
     'port'  => 3306,
     'user'  => 'root',
     'pass'  => 'chukui',
-    'name'  => 'chukui',
+    'name'  => 'robot',
 );
 
 $GLOBALS['config']['redis'] = array(
-    'host'      => '127.0.0.1',
+    'host'      => '192.168.31.249',
     'port'      => 6379,
     'pass'      => '',
     'prefix'    => 'phpspider',
