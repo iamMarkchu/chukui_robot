@@ -34,3 +34,4 @@ foreach ($immage_list as $k => $v) {
 $file = file_get_contents('./template.html');
 $file = str_replace('kkk', $str, $file);
 echo file_put_contents('./view.html', $file);
+echo '123';
