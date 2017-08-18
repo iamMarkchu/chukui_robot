@@ -6,6 +6,11 @@ $configs = array(
     'name' => 'mzitu',
     'log_show' => TRUE,
     'log_type' => 'error,debug',
+    'client_ip' => array(
+        '192.168.0.2', 
+        '192.168.0.3',
+        '192.168.0.4',
+    ),
     'tasknum' => 5,
     'timeout' => 10,
     'max_try' => 5,
