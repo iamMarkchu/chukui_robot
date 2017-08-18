@@ -2,15 +2,15 @@
 ini_set('memory_limit', '1024M');
 require dirname(__FILE__).'/../core/init.php';
 
+$client_ips = [];
+for ($i=1; $i <255 ; $i++) { 
+    $client_ips[] = '192.168.1.'.$i;
+}
 $configs = array(
     'name' => 'mzitu',
     'log_show' => TRUE,
     'log_type' => 'error,debug',
-    'client_ips' => array(
-        '192.168.0.2', 
-        '192.168.0.3',
-        '192.168.0.4',
-    ),
+    'client_ips' => $client_ips,
     'tasknum' => 5,
     'timeout' => 10,
     'max_try' => 5,
