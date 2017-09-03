@@ -5,7 +5,7 @@ $GLOBALS['config']['db'] = array(
     'port'  => 3306,
     'user'  => 'root',
     'pass'  => 'chukui',
-    'name'  => 'chukui',
+    'name'  => 'robot',
 );
 
 $GLOBALS['config']['redis'] = array(
