@@ -1,0 +1,24 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	kkk
+</body>
+<script>
+    var id = setInterval('test()', 1000);
+    var i = 1;
+    function test()
+    {
+        var scrollT = document.body.scrollTop += 100;
+        var scrollH = document.documentElement.scrollHeight||document.body.scrollHeight;
+        var clientH = document.documentElement.clientHeight||document.body.clientHeight
+        if(scrollT == scrollH - clientH){
+            console.log("到底部了");
+            clearInterval(id);
+        }
+    }
+</script>
+</html>

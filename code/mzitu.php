@@ -1,4 +1,7 @@
 <?php
+/**
+ * 73288  89256
+ */
 ini_set("memory_limit", "1024M");
 require dirname(__FILE__).'/../core/init.php';
 
@@ -14,7 +17,7 @@ $data = selector::select($html, "//div[contains(@class, 'pagenavi')]/a[last()-1]
 $count = intval($data);
 
 $immage_list = [];
-for ($i=1; $i <= $count; $i++) { 
+for ($i=1; $i <= $count; $i++) {
 	if($i == 1)
 	{
 		$tmp_url = $url;
@@ -29,7 +32,7 @@ for ($i=1; $i <= $count; $i++) {
 $str = '';
 
 foreach ($immage_list as $k => $v) {
-	$str .= '<img src="'.$v.'" width="600" referrer="no-referrer"/>';
+	$str .= '<img src="'.$v.'" width="600" referrer="http://www.mzitu.com"/>';
 }
 $file = file_get_contents('./template.html');
 $file = str_replace('kkk', $str, $file);
